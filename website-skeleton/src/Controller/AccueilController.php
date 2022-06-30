@@ -1,20 +1,27 @@
 <?php
 
-namespace App\Controller
-{
+namespace App\Controller {
 
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
+    use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+    use Symfony\Component\HttpFoundation\Response;
+    use Symfony\Component\Routing\Annotation\Route;
 
-    class AccueilController
+    class AccueilController extends AbstractController
     {
+
 
         /**
          * @Route("/accueil", name="accueil")
          */
         public function accueil()
         {
-            return new Response("Bonjour");
+            $message = 'Bonjour';
+
+            // récupère le fichier twig
+            // le compile en html
+            // crée une instance de la classe Response
+            // et la retourne au navigateur
+            return $this->render('accueil.html.twig', ['message' => $message]);
         }
     }
 }
