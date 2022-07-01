@@ -1,0 +1,7 @@
+{% if stars.published %}
+    <article style="background-color: {{ star.color }};">
+        <h1>{{ stars.title }}</h1>
+        <img src="{{ stars.image }}">
+        <p>{{ stars.publishedDate|date("m/d/Y") }}</p>
+    </article>
+{% endif %}

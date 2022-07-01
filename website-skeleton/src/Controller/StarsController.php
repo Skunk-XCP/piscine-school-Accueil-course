@@ -10,10 +10,10 @@ namespace App\Controller {
     {
 
         /**
-         * @Route("/stars", name="stars")
+         * @Route("/stars/{id}", name="stars")
          */
 
-        public function stars()
+        public function stars($id)
         {
             $stars = [
                 1 => [
@@ -54,7 +54,7 @@ namespace App\Controller {
                     'publishedDate' => new \DateTime('NOW')
                 ]
             ];
-            return $this->render('stars.html.twig', ['stars' => $stars]);
+            return $this->render('star.html.twig', ['star'=>$stars[$id]]);
         }
     }
 }
